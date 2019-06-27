@@ -1,0 +1,139 @@
+﻿
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title</title>
+
+    <meta name="description" content="@ViewBag.Description" />
+    <meta name="keywords" content="@ViewBag.Keywords" />
+    <meta name="robots" content="all" />
+    <meta name="revisit-after" content="1 week" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    @*en çok kullanılan yazı tipleri*@
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin-ext' rel='stylesheet' type='text/css'>
+
+    @*slider start*@
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <script src="~/Scripts/jmpress.min.js"></script>
+    <script src="~/Scripts/jquery.jmslideshow.js"></script>
+    <script src="~/Scripts/modernizr.custom.48780.js"></script>
+
+    @*slider end*@
+    <link href="~/Content/css/homepage-references.css" rel="stylesheet" />
+
+    @*<link href="~/Content/img/leaf-solutions-favicon.png" rel="shortcut icon" />*@
+    <link href="~/Content/img/turkey.ico" rel="shortcut icon" />
+
+    <link href="~/Content/img/leaf-solutions-share.png" rel="image_src" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .fa {
+            padding: 10px;
+            font-size: 30px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+        }
+
+            .fa:hover {
+                opacity: 0.7;
+            }
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .fa-instagram {
+            background: #125688;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <header>
+            <a href="/">
+                <div id="logo"></div>
+            </a>
+            <div id="social-media">
+
+                <a href="https://www.instagram.com/gozdekizapart/" class="fa fa-instagram" target="_blank">
+                </a>
+                <a href="#" class="fa fa-twitter">
+                </a>
+                <a href="https://www.facebook.com/gozdekizapart/" class="fa fa-facebook" target="_blank">
+                </a>
+
+            </div>
+            
+
+            @using (Html.BeginForm("Ara", "Home", FormMethod.Get))
+            {
+                <div id="search">
+                    <div id="search-area">
+                        <input type="text" class="search-text" name="search" />
+                    </div>
+                    <div id="search-button">
+                        <input type="submit" value="Ara" />
+                    </div>
+                </div>
+            }
+        </header>
+
+        <nav>
+            <a href="/">
+                <div class="nav-item first">
+                    <span>Ana Sayfa</span>
+                </div>
+            </a>
+            <a href="/hakkımızda/">
+                <div class="nav-item">
+
+                    <span>Hakkımızda</span>
+
+                </div>
+            </a>
+
+            <a href="/Hizmetlerimiz/">
+                <div class="nav-item">
+                    <span>Hizmetlerimiz</span>
+                </div>
+            </a>
+            <a href="/Odalarımız/">
+                <div class="nav-item solutions">
+                    <span>Odalarımız</span>
+                </div>
+            </a>
+
+
+            <a href="/Iletisim/">
+                <div class="nav-item last">
+                    <span>İletişim</span>
+                </div>
+            </a>
+        </nav>
+
+        <section id="content">
+
+            @RenderBody()
+
+        </section>
+
+        <footer>
+
+            <small>@DateTime.Now.Year &copy; Bilecik Gözde Kız Apart&Pansiyon.</small>
+        </footer>
+    </section>
+    @RenderSection("scripts", required: false)  @*arama motoru için bu kısmı unutma*@
+</body>
+</html>

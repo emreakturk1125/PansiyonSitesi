@@ -1,0 +1,99 @@
+﻿@{
+    Layout = "~/Views/shared/_Layout.cshtml";
+    ViewBag.Title = "AKTURKSOFT | Referanslar";
+    ViewBag.Description = "AKTURKSOFT Referanslar Sayfası";
+    ViewBag.Keywords = "AKTURKSOFT, solutions, referanslar, sayfası";
+}
+
+<div class="content-text">
+
+    <h2>HİZMETLERİMİZ</h2>
+    <p style="margin-left:50px;margin-right:50px;text-indent:30px;">
+        Günlük Konaklama,
+        Yemekli Ve Yemeksiz Seçenekler,
+        1-2-3-4 Kişilik Odalar,
+        24 Saat Sıcak Su,
+        24 Saat Güvenlik,
+        Sınırsız İnternet,
+        Televizyon,
+        Çamaşırhane ve Ütü Hizmeti,
+    </p>
+
+    <div class="references">
+
+        <div class="tile">
+            <img src="~/Content/imgPans/televizyon.jpg"   class="tile-img" />
+            <h3>TELEVİZYON</h3>
+        </div>
+        <div class="tile">
+            <img src="~/Content/imgPans/camasır.png"   class="tile-img" />
+            <h3>ÇAMAŞIRHANE
+            </h3>
+        </div>
+        <div class="tile">
+            <img src="~/Content/imgPans/utu.png"   class="tile-img" />
+           <h3>ÜTÜ HİZMETİ
+            </h3>
+        </div>
+        <div class="tile">
+            <img src="~/Content/imgPans/internet.jpeg"   class="tile-img" />
+            <h3>SINIRSIZ İNTERNET
+            </h3>
+        </div>
+        <div class="tile">
+            <img src="~/Content/imgPans/yemek.jpg"   class="tile-img" />
+            <h3>
+                YEMEKLİ VE YEMEKSİZ SEÇENEKLER
+            </h3>
+            
+        </div>
+        <div class="tile">
+            <img src="~/Content/imgPans/sıcaksu.jpg"   class="tile-img" />
+             <h3>
+                24 SAAT SICAK SU
+            </h3>
+        </div>
+        <div class="tile">
+            <img src="~/Content/imgPans/konaklama.jpg"  class="tile-img" />
+            <h3>
+                GÜNLÜK KONAKLAMA
+            </h3>
+        </div>
+        <div class="tile">
+            <img src="~/Content/imgPans/oda.png"   class="tile-img" />
+            <h3>
+                1,2,3 VE 4 KİŞİLİK ODALAR
+            </h3>
+        </div>
+        
+
+
+        <div style="clear: both;"></div>
+
+    </div>
+
+    <script>
+        $(function () {
+            var $container = $('.references'),
+                $tiles = $container.children('.tile'),
+                zaman;
+            $tiles.on('mouseenter', function (event) {
+                var $tile = $(this);
+                clearTimeout(zaman);
+                zaman = setTimeout(function () {
+                    if ($tile.hasClass('active')) return false;
+
+                    $tiles.not($tile.removeClass('passive').addClass('active'))
+                             .removeClass('active')
+                             .addClass('passive');
+                });
+            });
+            $container.on('mouseleave', function (event) {
+                clearTimeout(zaman);
+                $tiles.removeClass('active passive');
+            });
+        })
+    </script>
+
+
+</div>

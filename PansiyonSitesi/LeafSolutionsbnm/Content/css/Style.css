@@ -1,0 +1,901 @@
+﻿
+/*@import url(normalize.css);*/
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    background-image: url('../img/ark4.png');
+    overflow-y: scroll; /*kaydırma çubuğu her zaman görünür olsun*/
+    cursor: default; /*fare imleci her zaman varsayılan şekilde görünsün*/
+    color: #2e2828; /*metin rengi*/
+}
+
+a {
+    text-decoration: none; /*bağlantıların altı çizili olmasın*/
+    color: white; /*bağlantıların renkleri beyaz olsun*/
+}
+
+#container {
+    width: 928px;
+    padding: 13px 16px; /*yukarı - aşağı :13px, sağa - sola : 16px*/
+    position: relative;
+    margin: auto; /*auto ve relative ile nesne sayfada ortalandı*/
+    margin-top: 13px; /*yukarıda boşluk*/
+    box-shadow: 0 0 45px #1c3564; /*yatayda dikeyde kaydırma yok 10 pxllik bulanıklık renk metin rengiyle aynı*/
+    border-radius: 25px 25px; /* kenarlık yumuşatması sol alt-sağ üst*/
+    background: white;
+}
+
+/* *** header ****/
+header {
+    width: 928px;
+    height: 120px;
+    position: relative;
+     
+}
+
+/*  logo */
+
+#logo {
+    width: 468px;
+    height: 120px;
+    left: 20px;
+    position: relative;
+    float: left; /*position : relative ve float : left ile logo sola yaslandı*/
+    transition: opacity 0.3s ease-in-out 0s; /*logonun üzerine gelince şeffaflığı için geçiş efekti*/
+    background-image: url('../imgPans/gözdePans1.png');
+    cursor: pointer; /*logo üzerine fare gelince el şeklinde olsun*/
+}
+
+    #logo :hover { /*logonun üzerine gelince %20 şeffalık azalıcak*/
+        opacity: .8;
+    }
+
+    /* sosyal medya ikonları*/
+
+    #social-media {
+        height: 48px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        /*position absolute top right 0 ile bu nesneyi header ın sağ üstüne koydum*/
+    }
+
+   #social-media {
+    height: 48px;
+    position: absolute;
+    top: 0;
+    right: 0; /* position absolute top right 0 ile bu nesneyi header'ın sağ üst kısmına yerleştirdim. */
+}
+
+.social {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    float: right;
+    margin-left: 10px;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+    .social:hover {
+        border-radius: 20px 20px;
+        box-shadow: 0 0 10px #0d6636; /* sosyal medya ikonlarının üzerine gelince kenarları yumuşayacak ve yeşil gölge efekti oluşacak. */
+    }
+
+.facebook {
+    background: url(/Content/img/facebook.png);
+}
+
+.twitter {
+    background: url(/Content/img/twitter.png);
+}
+
+.youtube {
+    background: url(/Content/img/youtube.png);
+}
+
+.share {
+    background: url(/Content/img/share.png);
+}
+
+.rss {
+    background: url(/Content/img/rss.png);
+}
+
+/* search engine */
+
+#search {
+    width: 270px;
+    padding: 5px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    bottom: 10px; /* position absolute right ve bottom değerleri ile bu nesneyi header sağ alt kısmına yerleştirdik */
+    background: white;
+    border-radius: 12px 12px;
+    box-shadow: 0 0 15px #1c3564;
+}
+
+#search-area {
+    width: 205px;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 8px;
+    position: relative;
+    float: left; /* position relative ve float left ile bu nesneyi #search div'in içinde sola yasladık. */
+    border-radius: 8px 8px;
+    box-shadow: 0 0 2px #1c3564 inset;
+    background: #f4f4f4; /* arkaplan rengi */
+}
+
+.search-text {
+    width: 194px;
+    height: 22px;
+    border: 0; /* kenarlığı olmasın */
+    outline: none; /* tıklandığı zaman sarı çerçeveyi gizlemek için */
+    background: transparent; /* arkaplanı şeffaf olsun */
+}
+
+#search-button {
+    width: 60px;
+    height: 30px;
+    line-height: 30px; /* metin dikeyde ortalasın. height ile aynı değerde olduğu sürece */
+    text-align: center; /* metin yatayda ortalasın. */
+    position: relative;
+    float: left; /* position relative ve float left ile bu nesneyi #search div'in içinde sola yasladık. */
+    margin-left: 5px; /* 5px lik sola boşluk verdik */
+    border-radius: 8px 8px;
+    background: #f663e4; 
+    box-shadow: 0 0 2px 1px #1c3564 inset;
+    transition: all .2s ease-in-out;
+    cursor: pointer; /* fare imleci el şeklinde görünsün. bağlantı olduğu anlaşılsın. */
+    outline: none;
+}
+
+    #search-button:hover {
+        box-shadow: 0 0 10px 4px #848484 inset;
+        text-shadow: 0 0 2px yellow;
+        -webkit-text-shadow: 0 0 2px yellow;
+        border-radius: 12px 12px;
+    }
+
+    #search-button input[type="submit"] {
+        background: transparent;/* butonun arkaplanını şeffaf yapar*/
+        border: none; /* buton çizgilerini göstermez*/
+        color: white;
+        outline: none;
+    }
+
+    /***   NAV  ***/
+
+    nav {
+
+        width: 930px;
+        height: 40px;
+        line-height: 40px;/*metinler dikeyde ortaladım height değeri ile aynı old sürece*/
+        text-align: center;/*metinleri merkezde ortaldım*/
+        position: relative;
+        margin: 15px 0;/*yukarı-aşağı 15px boşluk ve sağa sola boşluk olmasın dedim*/
+        box-shadow: 0 0 4px #1c3564;/*menünün gölgelendirmesi merkezde olsun.4px bulanık olsun ve gölge rengi mavi olsun*/
+        border-radius: 12px 12px;/*kenarlar genel hatlar uyumlu olarak 12px yumuşasın*/
+        background: white;
+        cursor: pointer;
+    }
+
+    /*menu nesneleri*/
+
+    .nav-item {
+        width: 184px;
+        height: 40px;
+        position: relative;
+        float: left; 
+        border-right: 1px solid white;  
+         background: #f663e4; 
+        transition: all .3s ease-in-out;
+        color: white;
+    }
+
+    .first { 
+        border-radius: 12px 0 0 12px;
+        width: 190px;
+    }
+    .last {
+        border-radius: 0 12px 12px 0;
+        border: 0;
+    }
+    .nav-item:hover {
+        box-shadow: 0 0 40px #848484 inset; /*nesnelerin üzerine gelince içe doğru beyaz gölge efekti*/
+    }
+    /*çözümler butonunda üzerine gelince açılır buton*/
+
+    .nav-solutions {
+        width: 184px;
+        position: relative;
+        /*position: absolute;bu nesneyi nav item aşağı doğru 90px olacak şekilde konumlandırmak için*/
+        /*bottom: -90px;  açılan pencerenin açılma yerini ayarladık*/
+        background: #2E2828;
+        border-top: 1px solid white;
+        color: white;
+        box-shadow: 0 2px 4px #848484;
+        border-radius: 0 0 12px 12px;
+        transition: all .3s ease-in-out;
+        opacity: 0; /*nesnelerin görünürlüğü ilk başta olmasın*/
+        visibility: hidden;
+        z-index: 9999;/*bütün nesnelerin üstünde olsun slider ile çakışmasın yani sliderın altında kalmasın*/
+
+    }
+    /*çözümler butonunda üzerine gelince açılır buton*/
+    .nav-solutions-item {
+        width: 184px;
+        height: 30px;
+        font-size: 12px;
+        /*border-bottom: 1px solid #ffffff;*/   /*alt kenarlık*/
+        line-height: 30px;
+    }
+    .nav-solutions-item:hover {
+        box-shadow: 0 0 12px #848484 inset;
+    }
+    .solutions-last {
+        border-bottom: none;
+        border-radius: 0 0 12px 12px;
+    }
+    .solutions:hover .nav-solutions {
+        opacity: 1; /*çözüümler in üzerine gelince imleç, itemler gözüksün*/
+        visibility: inherit;
+    }
+
+    /*** CONTENT ***/
+
+    #content {
+        width: 928px;
+        position: relative;
+    }
+
+    .content-text {
+        text-align: justify;/*metin iki yana yaslandı*/
+    }
+
+    .content-text h2 {
+        text-align: center;/*başlık ortalandı*/
+        font-size: 22px;
+    }
+
+      .content-text h3 {
+        text-align: center;
+        font-size: 20px;
+    }
+      .img-left {
+          width: 180px;
+          position: relative;
+          float: left;/*görseel metin içinde sola hizalandı*/
+          margin: 0 15px 15px 0;/*görselin metinle içiçe geçmesi sorunu düzeltildi*//*yukarı ve sola boşluk vermedik sağa ve aşağı boşluk verdik*/
+      }
+      .img-right {
+          width: 180px;
+          position: relative;
+          float: right;
+          margin: 0 0 15px 15px;
+      }
+
+
+      /* homepage references */
+
+      #homepage-references {
+          width: 928px;
+          height: 550px;
+          position: relative;
+          margin: 0 auto 15px auto;/* yukarı:0 sağa auto, aşağı:15px sola:auto*/
+           
+           }
+      #homepage-references h2 {
+          text-align: center;
+          font-size: 22px;
+      }
+
+
+    /* SLİDER */
+
+   #slider {
+    width: 928px;
+    height: 240px;
+    position: relative;
+    margin-top: 15px;
+}
+
+.jms-slideshow {
+    position: relative;
+    width: 908px;
+    margin: 0 auto;
+    margin-left: 0;
+    height: 260px;
+}
+
+.jms-wrapper {
+    width: 924px;
+    height: 240px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+    -webkit-background-clip: padding;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    border: 2px solid #0d6636;
+    border-radius: 36px 36px;
+    box-shadow: 0 0 10px #1c3564;
+    outline: none;
+    -webkit-transition: background-color 1s linear;
+    -moz-transition: background-color 1s linear;
+    -o-transition: background-color 1s linear;
+    -ms-transition: background-color 1s linear;
+    transition: background-color 1s linear;
+}
+
+.color-1 {
+    background-color: #D5D5D5;
+}
+
+.color-2 {
+    background-color: #D5D5D5;
+}
+
+.color-3 {
+    background-color: #D5D5D5;
+}
+
+.color-4 {
+    background-color: #D5D5D5;
+}
+
+.color-5 {
+    background-color: #D5D5D5;
+}
+
+.step {
+    width: 928px;
+    left: -20px;
+    height: 420px;
+    display: block;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+    .step:not(.active) {
+        opacity: 0;
+        filter: alpha(opacity=0); /* internet explorer */
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=0)"; /*IE8*/
+    }
+
+.jms-content {
+    margin: 0px 300px 0px 20px;
+    position: relative;
+    clear: both;
+}
+
+.step h3 {
+    font-size: 46px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    margin: 0;
+    padding: 60px 0 10px 0;
+}
+
+.step p {
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    font-size: 34px;
+    font-weight: normal;
+    position: relative;
+    margin: 0;
+}
+
+a.jms-link {
+    color: #fff;
+    text-transform: uppercase;
+    background: #2e2828; /* Old browsers */
+    background: -moz-linear-gradient(top, #2e2828 1%, #2e2828 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#2e2828), color-stop(100%,#2e2828)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #2e2828 1%,#2e2828 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #2e2828 1%,#2e2828 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #2e2828 1%,#2e2828 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #2e2828 1%,#2e2828 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e2828', endColorstr='#2e2828',GradientType=0 ); /* IE6-9 */
+    padding: 8px 15px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    border: 1px solid #444;
+    border-radius: 4px;
+    opacity: 1;
+    margin-top: 40px;
+    clear: both;
+    -webkit-transition: all 0.4s ease-in-out 1s;
+    -moz-transition: all 0.4s ease-in-out 1s;
+    -ms-transition: all 0.4s ease-in-out 1s;
+    -o-transition: all 0.4s ease-in-out 1s;
+    transition: all 0.4s ease-in-out 1s;
+}
+
+a.jms-link:hover {
+    
+    box-shadow: 0 0 10px 1px #d5d5d5 inset;
+}
+
+.step:not(.active) a.jms-link {
+    opacity: 0;
+    margin-top: 80px;
+}
+
+.step img {
+    position: absolute;
+    right: -50px;
+    top: 30px;
+}
+
+.jms-dots {
+    width: 928px;
+    height: 40px;
+    position: absolute;
+    text-align: center;
+    left: 0px;
+    bottom: 0px;
+    z-index: 2000;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    background: none;
+    box-shadow: none;
+}
+
+    .jms-dots span {
+        display: inline-block;
+        position: relative;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #2e2828;
+        margin: 3px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px rgba(0,0,0,0.1) inset, 1px 1px 1px rgba(255,255,255,0.3);
+    }
+
+        .jms-dots span.jms-dots-current:after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            border-radius: 50%;
+            background: #ffffff; /* Old browsers */
+            background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
+            background: linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+        }
+
+.jms-wrapper.not-supported {
+    background-color: #E3D8FF;
+    background-color: rgba(227, 216, 268, 1);
+}
+
+    .jms-wrapper.not-supported:after {
+        content: 'The slideshow functionality is not supported on your device.';
+        padding: 0px 0px 30px 0px;
+        text-align: center;
+        display: block;
+    }
+
+    .jms-wrapper.not-supported .step {
+        display: none;
+        position: relative;
+        opacity: 1;
+        filter: alpha(opacity=99); /* internet explorer */
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=99)"; /*IE8*/
+        margin: 20px auto;
+    }
+
+        .jms-wrapper.not-supported .step:first-of-type {
+            display: block;
+        }
+
+        .jms-wrapper.not-supported .step:not(.active) a.jms-link {
+            opacity: 1;
+            margin-top: 40px;
+        }
+
+    /* promotions (paketler) */
+
+    #promotion {
+        width: 928px;
+        height: 304px;
+        position: relative;
+         
+    }
+
+    .promotion {
+        width: 183px;
+        padding: 15px;
+        height: 255px;
+        position: relative;
+        float: left;
+        margin-left: 12px;
+        text-align: center;
+        background: #d5d5d5;
+        border-radius: 26px 26px;
+        border: 2px solid #0d6636 ;
+        box-shadow: 0 0 10px #1c3564;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+    }
+
+    .promotion:hover {
+
+        border-radius: 39px 39px;
+        box-shadow: 0 0 10px #0d6636;
+        border: 3px;
+    }
+
+    .promotion-img {
+        position: relative;
+        margin: auto;
+        width: 64px;
+    }
+
+    .promotion h2 {
+
+        font-size: 15px;
+        
+    }
+    .promotion-button {
+
+        width: 80px;
+        height: 26px;
+        line-height: 26px;
+        font-size: 12px;
+        position: relative;
+        margin: 15px auto;
+        color: white;
+        background: #2E2828;
+        border: 1px;
+        box-shadow: 0 0 4px #1c3564;
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+
+    }
+
+    .promotion-button:hover {
+
+        box-shadow: 0 0 10px 1px #d5d5d5 inset;
+       
+        border-color: white;
+         
+    }
+   
+    /*** FOOTER  ***/
+
+    footer {
+        width: 928px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        position: relative;
+        margin: 0;
+        box-shadow: 0 0 4px #1c3564;
+        border-radius: 12px 12px;
+         background: #f663e4; 
+        color: white;
+    }
+
+     /****   ALT SAYFALAR  ***/
+
+     /* BİZE DAİR */
+
+     .img-left-box { /*sınıf*/ /* iki resmim alacak şekilde box oluşturduk*/
+
+         width: 300px;
+         height: 180px;
+         position: relative;
+         float: left;
+         margin: 0 15px 15px 0; /* yazı ile resim arası boşluklar*/
+         cursor: pointer;
+          
+
+     }
+
+     .img-left-top { /* ilk resim üstteki resim için */
+
+         width: 300px;
+         position: absolute;
+         top: 0;
+         border-radius: 24px 24px;
+         box-shadow: 0 0 2px #000000;
+         transition: opacity .5s ease-in-out;
+         z-index: 2; /* altta veya yukardaki ilk görünecek resmi ayarlamak için */
+
+     }
+
+     .img-left-buttom { /* alttaki resim için */
+
+         width: 300px;
+         position: absolute;
+         top: 0;
+         z-index: 1;
+
+
+     }
+
+     .img-left-top:hover {
+
+         opacity: 0;
+
+     }
+
+     /*referanslar*/
+
+     .references {
+
+         width: 902px;
+         padding: 0 10px;
+         position: relative;
+         margin: auto;
+         margin-bottom: 15px;
+
+     }
+     .tile { /* her bir kart görünümlü divler title olucak*/
+
+         width: 183px;
+         padding: 15px 10px;
+         height: 220px;
+         position: relative;
+         float: left;
+         margin-left: 15px;
+         margin-bottom: 15px;
+         text-align: center;
+         background: #d5d5d5;
+         border-radius: 26px 26px;
+         border: 2px solid #1c3564;
+         cursor: pointer;
+         transition: all .4s ease-in-out;
+
+     }
+
+     .tile h3 {
+
+         font-size: 14px;
+         color: #1c3564;
+
+     }
+     
+     .tile-img {
+         width: 180px;
+         height: 167px;
+         position: relative;
+         margin: auto;
+         border-radius: 12px 12px;
+         box-shadow: 0 0 2px 1px #1c3564;
+         transition: all .4s ease-in-out;
+
+
+     }
+
+     .tile-button {
+
+         width: 80px;
+         height: 26px;
+         line-height: 26px;
+         font-size: 12px;
+         position: relative;
+         margin: 15px auto;
+         color: white;
+         background: #2E2828;
+         border-radius: 8px 8px;
+         box-shadow: 0 0 2px #d5d5d5 inset;
+         transition: all .3s ease-in-out;
+         cursor: pointer;
+
+     }
+
+     .tile-button:hover {
+
+         box-shadow: 0 0 10px 2px  #d5d5d5 inset;
+         border-radius: 12px 12px;
+     }
+
+     .active {
+
+         border-radius: 36px 36px;
+         transition: all .4s ease-in-out;
+
+     }
+     .active:hover .tile-img{
+
+         border-radius: 26px 26px;
+     }
+     .passive {
+
+         border-radius: 16px 16px;
+         box-shadow: 0 0 80px 10px #2E2828 inset;
+         transform: scale(.9);
+         -webkit-transform: scale(.9);
+         transition: all .3s ease-in-out;
+
+     }
+
+     /*çözümler*/
+
+     .solution-option-container a {
+         color: #1c3564;
+     }
+
+     .solution-option {
+
+         width: 900px;
+         height: 120px;
+         line-height: 115px;
+         font-size: 46px;
+         position: relative;
+         margin: 20px auto;
+         text-align: center;
+         cursor: pointer;
+         background:  #d5d5d5;
+         border-radius: 26px 26px;
+         border: 2px solid #0d6636;
+         box-shadow: 0 0 10px #1c3564;
+         transition: all .4s ease-in-out; 
+     }
+
+     .solution-option:hover {
+
+         transform : scale(1.05);    /* %2 oranında büyütme*/
+         -webkit-transform: scale(1.05);  /*safari ve chrome için ön ektir*/
+     }
+
+.personel {
+
+    background-image: url('../img/personal-solutions.png');
+    
+}
+.corporate {
+    background-image: url('../img/corporate-solutions.png');
+}
+
+/* iletişim */
+
+#google-maps {
+
+    width: 800px;
+    height: 420px;
+    position: relative;
+    margin: auto;
+    border-radius: 26px 26px;
+    overflow: hidden;
+    box-shadow: 0 0 10px 2px #1c3564, 0 0 20px 10px #0d6636 inset;/*dış,iç*/
+
+}
+
+#contact-form {
+
+    width: 440px;
+    padding: 20px;
+    position: relative;
+    margin: auto;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px 2px #1c3564;
+    border-radius: 0 26px;
+    overflow: hidden;
+    /*background: #afe3c7;*/
+     background: #f663e4;
+
+}
+
+.contact-line {
+
+    width: 440px;
+    height: 36px;
+    line-height: 36px;
+    position: relative;
+    margin-top: 8px;
+     
+
+}
+
+.contact-col1 {
+
+    width: 120px;
+    height: 36px;
+    position: relative;
+    float: left;
+    font-weight: bold;
+     
+        
+
+}
+.contact-col2 {
+    width: 320px;
+    height: 36px;
+    position: relative;
+    float: left;
+ 
+
+}
+
+.obligation-button {
+
+   
+   background: #0d6636 none repeat scroll 0 0;
+    border-radius: 0 8px;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    font-size: 12px;
+    height: 26px;
+    line-height: 20px;
+    outline: medium none;
+    position: relative;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 200px;
+}
+
+.input {
+    width: 316px;
+    height: 30px;
+    position: relative;
+    float: left;
+    outline: none;
+    border-radius: 0 12px;
+    font-size: 16px;
+    text-indent: 10px;
+    border-color: transparent;
+    box-shadow: 0 0 1px 1px #0d6636;
+    transition: all .3s ease-in-out;
+
+}
+
+.message {
+
+    height: 220px;
+    
+}
+.textarea {
+
+    width: 296px;
+    padding: 10px;
+    height: 200px;
+    outline: none;
+    resize: none; /* büyütüp küçültmeyi engelledik*/
+    border-color: transparent;
+    border-radius: 0 12px;
+    box-shadow: 0 0 1px 1px #0d6636;
+    transition: all .3s ease-in-out;
+}
+
+.contact-button {
+
+    width: 80px;
+    height: 32px;
+    line-height: 24px;
+    position: relative;
+    float: right;
+     
+    top: 10px;
+    right: 0;
+    text-align: center;
+    border-radius: 0 12px;
+    background: #0d6636;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
